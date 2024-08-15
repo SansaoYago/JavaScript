@@ -7,5 +7,5 @@ function enviar() {
     let n2 = Number(nota2.value)
     let media = (n1 + n2) / 2
     let resp = window.document.querySelector('#res')
-    resp.innerHTML = `O Aluno(a) ${name}, teve as notas ${n1} e ${n2} <br> E a sua média foi de ${media.toFixed(1)}`
+    resp.innerHTML = `O Aluno(a) ${name}, teve as notas ${n1} e ${n2} <br> E a sua média foi de ${media.toFixed(2)}`
 }
