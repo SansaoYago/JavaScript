@@ -7,7 +7,7 @@ frm.addEventListener("submit", (e) => {
     const veiculo = frm.inVeic.value
     const preço = Number(frm.inPre.value)
 
-    const entrada = preço * 0.5
+    const entrada = preço * 0.50
     const parcela = (preço * 0.50) / 12
 
     resp1.textContent = `Promoção: ${veiculo}`
