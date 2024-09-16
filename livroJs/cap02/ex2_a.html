@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2_a</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            padding-top: 50px;
+            background-color: grey;
+        }
+
+        main {
+            background-color: rgb(187, 200, 200);
+            max-width: 300px;
+            padding: 30px;
+            border-radius: 15px;
+            margin: auto;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 10px;
+        }
+
+        p {
+            margin: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .botao {
+            float: right;
+        }
+
+        #resp {
+            display: block;
+            padding: 3px;
+            margin: auto;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Farmácia Js</h1>
+        <form>
+                <p>
+                    Medicamento: <input class="botao" type="text" name="inMed" id="inMed" required>
+                </p>
+                <p>
+                    Preço R$: <input class="botao" type="number" name="inPre" id="inPre" min="0" step="0.01" required>
+                </p>
+                <input id="resp" type="submit" value="Mostrar Promoção">
+        </form>
+        <h3 id="outresp1"></h3>
+        <h3 id="outresp2"></h3>
+    </main>
+    <script src="js/ex2_a.js"></script>
+</body>
+</html>
