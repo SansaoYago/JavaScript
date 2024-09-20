@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4_2</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: lightgray;
+            margin-top: 100px;
+        }
+
+        main {
+            background-color: white;
+            display: block;
+            width: 900px;
+            height: 300px;
+            padding: 20px;
+            margin: auto;
+            box-shadow: 2px 2px  2px rgba(0, 0, 0, 0.266);
+            border-radius: 15px;
+        }
+
+        main h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.8em;
+            border-bottom-style: inset;
+            margin-bottom: 15px;
+        }
+
+        label {
+            line-height: 2em;
+        }
+
+        img {
+            float: left;
+            border-radius: 10px;
+        }
+
+        .resp {
+            padding: 4px;
+        }
+
+        h3 {
+            padding-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <img src="imagens/peso-ideal.jpeg" alt="Imagem de uma balança de peso">
+        <h1>Programa Cálculo do Peso Ideal</h1>
+        <form>
+            <p>
+                <label for="inNome">
+                    Nome: <input type="text" name="inNome" id="inNome">
+                </label> <br> Sexo:
+                <label for="inMasc">
+                    <input type="radio" name="sexo" id="inMasc"> Masculino
+                </label>
+                <label for="fem">
+                    <input type="radio" name="sexo" id="inFem"> Feminino
+                </label> <br>
+                <label for="inAlt">
+                    Altura: <input type="number" name="inAlt" id="inAlt" min="0" step="0.01" required>
+                </label>
+            </p>
+            <input class="resp" type="submit" value="Calcular Peso Ideal">
+            <input class="resp" type="reset" value="Limpar Campo">
+        </form>
+        <h3></h3>
+    </main>
+    <script src="Js/ex4_2.js"></script>
+</body>
+</html>
