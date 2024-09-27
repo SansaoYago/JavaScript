@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4_6</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        img {
+            float: left;
+            width: 29%;
+            padding: 15px 20px 15px 5px;
+            border-radius: 15px;
+        }
+
+        body {
+            background-image: linear-gradient(to right, lightgrey, transparent);
+            padding-top: 100px;
+        }
+
+        h1 {
+            border-bottom-style: inset;
+            padding-top: 20px;
+        }
+
+        main {
+            background-color: white;
+            max-width: 600px;
+            height: 290px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.115);
+        }
+
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #botao {
+            display: block;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 20px auto;
+        }
+        
+        h3 {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="imagens/caixa-bancario.jpg" alt="">
+        <h1>Programa Caixa Eletrônico</h1>
+        <form>
+            <p>
+                <label for="inSaque">
+                    Valor do Saque: <input type="number" name="inSaque" id="inSaque">
+                </label>
+            </p>
+            <input id="botao" type="submit" value="Exibir Notas para Saque">
+        </form>
+        <h3 id="outResp1"></h3>
+        <h3 id="outResp2"></h3>
+        <h3 id="outResp3"></h3>
+    </main>
+    <script src="Js/ex4_6.js"></script>
+</body>
+</html>
