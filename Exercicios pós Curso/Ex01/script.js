@@ -3,5 +3,7 @@ function enviar() {
     let inicio = window.document.getElementById('dados')
     let resp = window.document.getElementById('res')
     inicio.style.display = 'none'
-    resp.innerHTML = `Seja bem vindo(a) ${nome}`
+
+    resp.innerText = `Seja bem vindo(a) ${nome}`
+
 }
