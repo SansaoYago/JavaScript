@@ -9,7 +9,7 @@ function contagem() {
         res.innerHTML = 'Impossível contar'
         window.alert('[ERRO] faltam dados')
     } else {
-        res.innerHTML = `Contando: <br>`
+        res.innerHTML = `Contando:\n`
         var i = Number(ini.value)
         var f = Number(fim.value)
         var p = Number(passo.value)
