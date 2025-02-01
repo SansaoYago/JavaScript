@@ -13,7 +13,20 @@ dado.addEventListener("click", (e) => {
 
     //Processamento de dados
     dado.style.display = 'none'
+    if (nome == "" || nome.length == 0) {
+        alert("Informe um Nome válido!!")
+        dado.style.display = 'block'
+        resp.style.display = 'none'
+    } else {
+        resp.innerHTML = `Seja bem vindo(a) ${nome}`
+        dado.style.display = 'none'
+        resp.style.display = 'block'
+    }
 
     //Saída de dados
-    resp.innerHTML = `Seja bem vindo(a) ${nome}`
+        
+    
+
+
+    
 })
