@@ -10,7 +10,7 @@
             
         }
 
-        h1 {
+        h1, p {
             color: white;
             text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.141);
             cursor: pointer;
@@ -19,10 +19,19 @@
 </head>
 <body>
     <h1>Olá, mundo!</h1>
+    <p>
+
+    </p>
     <script>
-        alert("Minha primeira mensagem!")
-        confirm("Está gostando de JavaScript?")
-        prompt("Qual é seu Nome?")
+        //alert("Minha primeira mensagem!")
+        //confirm("Está gostando de JavaScript?")
+        let nome = prompt("Qual é seu Nome?")
+        var outp = document.querySelector('p')
+        
+         if (nome.length > 0) {
+            outp.innerText = `Olá, ${nome}, seja bem vindo(a) aos meus exercícios!!`
+         }
+         
     </script>
 </body>
 </html>
