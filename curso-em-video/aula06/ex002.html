@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: wheat;
+            /* comentário em css */
+        }
+
+        h1, p {
+            color: white;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.141);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>
+        <!-- comentário em HTML -->
+    </p>
+    <script>
+        let nome = prompt("Qual é seu Nome?")
+        var outp = document.querySelector('p')
+        
+         if (nome.length > 0) {// comentário em JS
+            outp.innerText = `Olá, ${nome}, seja bem vindo(a) aos meus exercícios!!`
+         }
+         
+    </script>
+</body>
+</html>
