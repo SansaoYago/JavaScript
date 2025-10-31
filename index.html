@@ -1,15 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornada JS</title>
+    <style>
+        #contain {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        header, main {
+            text-align: center;
+            padding: 5px;
+        }
+
+        main > section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section > a {
+            text-decoration: none;
+            color: black;
+            
+            padding: 2px;
+            margin: 1px;
+            
+        }
+
+    </style>
 </head>
 <body>
-    <header>
+    <div id="contain">
+        <header>
         <h1>Minha Jornada em JS</h1>
         <p>
-            Data de inicio: 26/03/2025
+            Data de inicio: 01/11/2025
         </p>
     </header>
     <main>
@@ -22,5 +54,7 @@
             <a href="livro-js/">Livro-JS</a>
         </section>
     </main>
+    </div>
+    
 </body>
 </html>
