@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #contain {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        section {
+            border: 1px solid;
+            padding: 5px;
+        }
+
+        #check {
+            display: flex;
+            flex-direction: column;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+        <main>
+            <section id="check">
+                <label for="UPS">
+                    <input type="checkbox" name="UPS" id="UPS">
+                    UPS
+                </label>
+                <label for="GMG">
+                    <input type="checkbox" name="GMG" id="GMG">
+                    GMG
+                </label>
+                <label for="Ger">
+                    <input type="checkbox" name="Ger" id="GER">
+                    Geradores
+                </label>
+            </section>
+            <section id="list">
+                <ul>
+                    <li id="UPSli">UPS</li>
+                    <li id="GMGli">GMG</li>
+                    <li id="GERli">Geradores</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // 1. Seleciona os elementos para UPS
+        var UPSck = document.querySelector("#UPS");
+        var UPSli = document.querySelector("#UPSli");
+        
+        // NOVO: Seleciona os elementos para GMG
+        var GMGck = document.querySelector("#GMG");
+        var GMGli = document.querySelector("#GMGli");
+
+        var GERck = document.querySelector("#GER");
+        var GERli = document.querySelector("#GERli");
+
+        // Função geral para aplicar/remover o risco
+        // Recebe o checkbox e o <li> correspondente como argumentos
+        function toggleLineThrough(checkbox, listItem) {
+            if (checkbox.checked) {
+                // Aplica o risco
+                listItem.style.textDecoration = "line-through";
+            } else {
+                // Remove o risco
+                listItem.style.textDecoration = "none";
+            }
+        }
+
+        // 3. Adiciona os ouvintes de evento 'change'
+
+        // Evento para UPS
+        UPSck.addEventListener('change', function() {
+            toggleLineThrough(UPSck, UPSli);
+        });
+        
+        // NOVO: Evento para GMG
+        GMGck.addEventListener('change', function() {
+            toggleLineThrough(GMGck, GMGli);
+        });
+
+        GERck.addEventListener('change', function() {
+            toggleLineThrough(GERck, GERli)
+        }) 
+
+
+        // Opcional: Chama a função uma vez para garantir o estado inicial
+
+        toggleLineThrough(UPSck, UPSli);
+        toggleLineThrough(GMGck, GMGli);
+        toggleLineThrough(GERck, GERli);
+    </script>
+</body>
+</html>
