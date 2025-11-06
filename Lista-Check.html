@@ -22,10 +22,10 @@
         main {
             display: flex;
             flex-flow: row nowrap;
+            border: 1px solid;
         }
 
         section {
-            border: 1px solid;
             padding: 5px;
         }
 
@@ -43,24 +43,29 @@
     <div id="contain">
         <main>
             <section id="check">
-                <label for="UPS">
-                    <input type="checkbox" name="UPS" id="UPS">
-                    UPS
-                </label>
-                <label for="GMG">
-                    <input type="checkbox" name="GMG" id="GMG">
-                    GMG
-                </label>
-                <label for="GER">
-                    <input type="checkbox" name="GER" id="GER">
-                    Geradores
-                </label>
+                <ul>
+                    <li><input type="checkbox" name="UPS" id="UPS"></li>
+                    <li><input type="checkbox" name="GMG" id="GMG"></li>
+                    <li><input type="checkbox" name="GER" id="GER"></li>
+                    <li><input type="checkbox" name="MLB" id="MLB"></li>
+                    <li><input type="checkbox" name="MS" id="MS"></li>
+                    <li><input type="checkbox" name="TX" id="TX"></li>
+                    <li><input type="checkbox" name="SISD" id="SISD"></li>
+                    <li><input type="checkbox" name="SUB" id="SUB"></li>
+                    <li><input type="checkbox" name="TESTEG" id="TESTEG"></li>
+                </ul>
             </section>
             <section id="list">
                 <ul>
                     <li id="UPSli">UPS</li>
                     <li id="GMGli">GMG</li>
                     <li id="GERli">Geradores</li>
+                    <li id="MLBli">MLB</li>
+                    <li id="MSli">MS</li>
+                    <li id="TXli">Sala TX</li>
+                    <li id="SISDli">Sistema Diesel</li>
+                    <li id="SUBli">Subestação</li>
+                    <li id="TESTEGli">Teste Geradores</li>
                 </ul>
             </section>
         </main>
@@ -78,6 +83,30 @@
         // NOVO: Seleciona os elementos para GER
         var GERck = document.querySelector("#GER");
         var GERli = document.querySelector("#GERli");
+
+        // NOVO: Seleciona os elementos para MLB
+        var MLBck = document.querySelector("#MLB");
+        var MLBli = document.querySelector("#MLBli");
+
+        // NOVO: Seleciona os elementos para MS
+        var MSck = document.querySelector("#MS");
+        var MSli = document.querySelector("#MSli");
+
+        // NOVO: Seleciona os elementos para Sala TX
+        var TXck = document.querySelector("#TX");
+        var TXli = document.querySelector("#TXli");
+
+        // NOVO: Seleciona os elementos Sistema Diesel
+        var SISDck = document.querySelector("#SISD");
+        var SISDli = document.querySelector("#SISDli");
+
+        // NOVO: Seleciona os elementos Subestação
+        var SUBck = document.querySelector("#SUB");
+        var SUBli = document.querySelector("#SUBli");
+
+        // NOVO: Seleciona os elementos Teste Geradores
+        var TESTEGck = document.querySelector("#TESTEG");
+        var TESTEGli = document.querySelector("#TESTEGli");
 
         // Função geral para aplicar/remover o risco
         // Recebe o checkbox e o <li> correspondente como argumentos
@@ -106,7 +135,37 @@
         // NOVO: Evento para GER
         GERck.addEventListener('change', function() {
             toggleLineThrough(GERck, GERli)
-        }) 
+        });
+
+        // NOVO: Evento para MLB
+        MLBck.addEventListener('change', function() {
+            toggleLineThrough(MLBck, MLBli)
+        });
+
+        // NOVO: Evento para MS
+        MSck.addEventListener('change', function() {
+            toggleLineThrough(MSck, MSli)
+        });
+
+        // NOVO: Evento para Sala TX
+        TXck.addEventListener('change', function() {
+            toggleLineThrough(TXck, TXli)
+        });
+
+        // NOVO: Evento para Sitema Diesel
+        SISDck.addEventListener('change', function() {
+            toggleLineThrough(SISDck, SISDli)
+        });
+
+        // NOVO: Evento para Subestação
+        SUBck.addEventListener('change', function() {
+            toggleLineThrough(SUBck, SUBli)
+        });
+
+        // NOVO: Evento para Teste Geradores
+        TESTEGck.addEventListener('change', function() {
+            toggleLineThrough(TESTEGck, TESTEGli)
+        });
 
 
         // Opcional: Chama a função uma vez para garantir o estado inicial
@@ -114,6 +173,12 @@
         toggleLineThrough(UPSck, UPSli);
         toggleLineThrough(GMGck, GMGli);
         toggleLineThrough(GERck, GERli);
+        toggleLineThrough(MLBck, MLBli);
+        toggleLineThrough(MSck, MSli);
+        toggleLineThrough(TXck, TXli);
+        toggleLineThrough(SISDck, SISDli);
+        toggleLineThrough(SUBck, SUBli);
+        toggleLineThrough(TESTEGck, TESTEGli);
     </script>
 </body>
 </html>
