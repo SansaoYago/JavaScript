@@ -75,6 +75,7 @@
         var GMGck = document.querySelector("#GMG");
         var GMGli = document.querySelector("#GMGli");
 
+        // NOVO: Seleciona os elementos para GER
         var GERck = document.querySelector("#GER");
         var GERli = document.querySelector("#GERli");
 
@@ -102,6 +103,7 @@
             toggleLineThrough(GMGck, GMGli);
         });
 
+        // NOVO: Evento para GER
         GERck.addEventListener('change', function() {
             toggleLineThrough(GERck, GERli)
         }) 
