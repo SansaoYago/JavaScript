@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1_C</title>
+</head>
+<body>
+    <script>
+        //Entrada de dados
+            const preco = Number(prompt("Preço do produto R$: "))
+            
+        //Processamento de dados
+            const desc = preco - (preco * 0.10)
+            const parc = preco / 3
+
+        //Saída de dados
+            alert(`Preço ${preco.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}\nA Vista ${desc.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}\nOu 3x de ${parc.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`)
+    </script>
+</body>
+</html>

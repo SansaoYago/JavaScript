@@ -7,9 +7,14 @@
 </head>
 <body>
     <script>
+    //Entrada de dados
         const jantar = Number(prompt("Valor do jantar R$: "))
+
+    //Processamento de dados
         const garcon = jantar * 0.10
         const total = jantar + garcon
+
+    //Saída de dados
         alert(`Taxa do Garçon ${garcon.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}\nTotal ${total.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`)
     </script>
 </body>

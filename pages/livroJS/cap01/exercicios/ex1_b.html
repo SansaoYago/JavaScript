@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1_B</title>
+</head>
+<body>
+    <script>
+        //Entrada de dados
+            const tConta = Number(prompt("Valor total da conta R$: "))
+            const nClientes = Number(prompt("Número de clientes"))
+
+        //Processamento de dados
+            const total = tConta / nClientes
+
+        //Saída de dados
+            alert(`Valor da conta ${tConta.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}\nNúmero de clientes ${nClientes}\nValor por cliente ${total.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`)
+    </script>
+</body>
+</html>
