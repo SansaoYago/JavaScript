@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/aula11/Tema.html"
+    "livePreview.defaultPreviewPath": "/aula11/Tema.html",
+    "liveServer.settings.port": 5501
 }
