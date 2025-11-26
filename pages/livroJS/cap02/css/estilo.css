@@ -21,3 +21,8 @@ section {
 h1, p, input[type="submit"] {
     padding: 3px;
 }
+
+h3 {
+    padding: 2px;
+    margin: 5px;
+}
