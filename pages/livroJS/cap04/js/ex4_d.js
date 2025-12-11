@@ -8,11 +8,8 @@ frm.addEventListener("submit", (e)=> {
     const A = Number(frm.inLadoA.value)
     const B = Number(frm.inLadoB.value)
     const C = Number(frm.inLadoC.value)
-    let tipo
-
+    let tipo 
     const Lados = A > (B + C) || B > (A + C) || C > (A + B) ? "Não pode formar um Triângulo" : "Pode Formar um Triâgulo"
-
-    
 
     if (Lados === "Pode Formar um Triâgulo") {
         if (A == B && B == C) {
