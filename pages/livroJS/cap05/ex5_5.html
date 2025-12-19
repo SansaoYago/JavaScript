@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 5_5</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        #resp1 {
+            overflow: auto;
+        }
+        #resp1::-webkit-scrollbar {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        #resp1::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.574);
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+        <section id="pai" style="height: 400px;">
+            <img src="img/ex5_5.png" alt="">
+            <section id="filho">
+                <h1>Programa Contas do Mês</h1>
+                <form>
+                    <label for="inDescricao">
+                        <p style="float: right;">
+                            Descrição da Conta:
+                            <input type="text" name="inDescricao" id="inDescricao" min="3" required autocomplete="off">
+                        </p>
+                    </label>
+                    <label for="inValor">
+                        <p style="float: right;">
+                            Valor R$
+                            <input type="number" name="inValor" id="inValor" min="0" step="0.01" required autocomplete="off">
+                        </p>
+                    </label>
+                    <input type="submit" value="Registrar Conta">
+                </form>
+                <pre id="resp1"></pre>
+                <pre id="resp2"></pre>
+            </section>
+        </section>
+    </div>
+    <script src="js/ex5_5.js"></script>
+</body>
+</html>
