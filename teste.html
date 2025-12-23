@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de contador</title>
+</head>
+<body>
+    <main>
+        <h1>Teste de contador</h1>
+        <button onclick="Clicar()">contador</button>
+    </main>
+    <p></p>
+    <script>
+        const campo = document.querySelector('button')
+        const out = document.querySelector("p")
+        let contador = 0
+
+        function Clicar(){
+            contador++
+            if (contador === 1){
+                out.innerText = `O botão foi clicado ${contador} vez`
+                return
+            }
+            out.innerText = `O botão foi clicado ${contador} vezes`
+        }
+    </script>
+</body>
+</html>
