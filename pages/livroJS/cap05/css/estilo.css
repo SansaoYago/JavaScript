@@ -82,11 +82,11 @@ input[type="submit"] {
     padding: 3px;
     border-radius: 10px;
     border: 1px solid rgba(245, 222, 179, 0.33);
+    transition: 300ms;
 }
 
 input[type="submit"]:hover {
     background-color: rgba(127, 255, 212, 0.514);
-    transition: 400ms;
 }
 
 input::-webkit-scrollbar-button {
