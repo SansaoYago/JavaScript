@@ -6,17 +6,50 @@
     <title>Exemplo 6_1</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        .conteiner {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100vw;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 150px;
+        }
         form {
             display: flex;
             gap: 5px;
+        }
+
+        #contain {
+            display: flex;
+            outline: 2px solid red;
+            padding: 1px;
+            width: fit-content;
+        }
+
+        #item {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            border: 1px solid black;
+            padding: 0px 5px;
+        }
+
+        h1 {
+            border-bottom: inset;
+            padding: 5px;
+        }
+
+        img {
+            max-width: 200px;
         }
     </style>
 </head>
 <body>
     <div class="conteiner">
-        <section>
-            <img src="img/" alt="Exemplo 6_1">
-            <section>
+        <section id="contain">
+            <img src="img/ex6_1.png" alt="Exemplo 6_1">
+            <section id="item">
                 <h1>Consultório Odontológico</h1>
                 <form>
                     <label for="inPaciente">
@@ -30,7 +63,7 @@
                     <input type="button" value="Atender" id="btAtender">
                 </form>
                 <h3>
-                    Em Atenndimento:
+                    Em Atendimento:
                     <span class="atendimento"></span>
                 </h3>
                 <pre></pre>
