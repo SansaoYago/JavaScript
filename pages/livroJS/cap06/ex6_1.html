@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6_1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        form {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <section>
+            <img src="img/" alt="Exemplo 6_1">
+            <section>
+                <h1>Consultório Odontológico</h1>
+                <form>
+                    <label for="inPaciente">
+                        <p>
+                            Paciente:
+                            <input type="text" name="inPacciente" id="inPaciente" required autofocus autocomplete="off">
+                        </p>
+                    </label>
+                    <input type="submit" value="Adicionar">
+                    <input type="button" value="Urgência" id="btUrgencia">
+                    <input type="button" value="Atender" id="btAtender">
+                </form>
+                <h3>
+                    Em Atenndimento:
+                    <span class="atendimento"></span>
+                </h3>
+                <pre></pre>
+            </section>
+        </section>
+    </div>
+    <script src="js/ex6_1.js"></script>
+</body>
+</html>
