@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .conteiner {
+            background-color: rgba(178, 178, 178, 0.838);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
             width: 100vw;
             height: 100dvh;
             display: flex;
@@ -15,34 +17,73 @@
             align-items: flex-start;
             padding-top: 150px;
         }
-        form {
-            display: flex;
-            gap: 5px;
-        }
+        
 
         #contain {
+            background-image: linear-gradient(190deg, rgba(16, 80, 92, 0.616), transparent);
             display: flex;
-            outline: 2px solid red;
+            outline: 2px solid rgba(255, 255, 255, 0.348);
+            border-radius: 15px;
             padding: 1px;
-            width: fit-content;
+            height: 500px;
         }
 
         #item {
             display: flex;
-            flex-flow: column;
+            flex-flow: column nowrap;
             justify-content: space-around;
-            border: 1px solid black;
+            border-left: 3px solid rgba(255, 255, 255, 0.159);
             padding: 0px 5px;
+            align-self: flex-start;
+            
+        }
+        form {
+            display: flex;
+            gap: 5px;
+            align-items: flex-end;
+            
         }
 
         h1 {
             border-bottom: inset;
             padding: 5px;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.347);
         }
 
         img {
             max-width: 200px;
+            align-self: center;
         }
+
+        h3 {
+            margin-top: 20px;
+            color: rgb(34, 46, 116); 
+            text-shadow: 1px 1px 2px rgba(11, 11, 11, 0.423);
+            border-bottom: 2px dashed rgba(34, 46, 116, 0.415);
+        }
+
+        input[type="submit"], input[type="button"] {
+            padding: 2px 2px;
+            border-radius: 7px;
+            border: 1px solid rgba(0, 0, 0, 0.622);
+            cursor: pointer;
+            transition: all 200ms;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            transform: scale(0.9);
+            box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.414);
+        }
+        input[type="submit"]:active, input[type="button"]:active {
+            transform: translate(0px, -7px) scale(1.1);
+        }
+
+        pre {
+            flex-basis: 360px;
+            flex-grow: 1;
+        }
+
     </style>
 </head>
 <body>
@@ -63,7 +104,7 @@
                     <input type="button" value="Atender" id="btAtender">
                 </form>
                 <h3>
-                    Em Atendimento:
+                    <b>Em Atendimento:</b>
                     <span class="atendimento"></span>
                 </h3>
                 <pre></pre>

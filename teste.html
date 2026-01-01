@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste de contador</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -12,18 +22,21 @@
     </main>
     <p></p>
     <script>
-        const campo = document.querySelector('button')
+        const campo = document.body
         const out = document.querySelector("p")
         let contador = 0
 
-        function Clicar(){
+        campo.addEventListener("click", ()=> {
+
             contador++
             if (contador === 1){
-                out.innerText = `O botão foi clicado ${contador} vez`
+                out.innerText = `Dentro do site houve ${contador} Click`
                 return
             }
-            out.innerText = `O botão foi clicado ${contador} vezes`
-        }
+            out.innerText = `Dentro do site houve ${contador} Clicks`
+
+        })
+
     </script>
 </body>
 </html>

@@ -33,7 +33,7 @@ frm.btUrgencia.addEventListener("click", () => {
     pacientes.forEach((paciente, i) => (lista += `${i + 1}° Paciente:${paciente}\n`))
 
     out.textContent = lista
-    frm.paciente.value = ""
+    frm.inPaciente.value = ""
     frm.inPaciente.focus
 })
 
