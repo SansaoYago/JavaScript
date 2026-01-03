@@ -3,40 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de contador</title>
+    <title>Teste</title>
     <style>
         * {
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        body {
-            width: 100vw;
-            height: 100vh;
+
+        main {
+            padding: 10px;
+        }
+
+        h1 {
+            border-bottom: inset rgba(255, 0, 0, 0.429);
+            font-size: 1.5em;
+            padding: 5px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            gap: 5px;
+            margin: 20px 0px;
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Teste de contador</h1>
-        <button onclick="Clicar()">contador</button>
-    </main>
-    <p></p>
-    <script>
-        const campo = document.body
-        const out = document.querySelector("p")
-        let contador = 0
-
-        campo.addEventListener("click", ()=> {
-
-            contador++
-            if (contador === 1){
-                out.innerText = `Dentro do site houve ${contador} Click`
-                return
-            }
-            out.innerText = `Dentro do site houve ${contador} Clicks`
-
-        })
-
-    </script>
+    <div class="contain">
+        <main>
+            <h1>Consultorio Odontológico</h1>
+            <form>
+                <label for="inPaciente">
+                    <p>
+                        Paciente:
+                        <input type="text" name="inPaciente" id="inPaciente">
+                    </p>
+                </label>
+                <input type="submit" value="Adicionar">
+                <input type="button" value="Urgência" id="btnUrg">
+                <input type="button" value="Atender" id="btnAtd">
+            </form>
+            <h3>
+                Em atendimento: 
+                <span></span>
+            </h3>
+            <pre></pre>
+        </main>
+    </div>
+    <script src="teste.js"></script>
 </body>
 </html>
