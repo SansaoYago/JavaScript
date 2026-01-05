@@ -3,51 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+    <title>Lista Prioridade de Gastos</title>
     <style>
         * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        main {
-            padding: 10px;
-        }
-
-        h1 {
-            border-bottom: inset rgba(255, 0, 0, 0.429);
-            font-size: 1.5em;
-            padding: 5px;
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            gap: 5px;
-            margin: 20px 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="contain">
         <main>
-            <h1>Consultorio Odontológico</h1>
+            <h1>Prioridade de Gastos</h1>
             <form>
-                <label for="inPaciente">
+                <label for="inDescricao">
                     <p>
-                        Paciente:
-                        <input type="text" name="inPaciente" id="inPaciente">
+                        Descrição:
+                        <input type="text" name="inDescricao" id="inDescricao" required>
+                        <input type="submit" value="Inserir">
+                        <input type="button" value="Prioridade" id="btPr">
+                        <input type="button" value="Eleger" id="btEleger">
                     </p>
                 </label>
-                <input type="submit" value="Adicionar">
-                <input type="button" value="Urgência" id="btnUrg">
-                <input type="button" value="Atender" id="btnAtd">
             </form>
             <h3>
-                Em atendimento: 
-                <span></span>
+                Elegido:
+                <span id="Elegido"></span>
             </h3>
             <pre></pre>
         </main>

@@ -1,60 +1,59 @@
 const form = document.querySelector("form")
-const span = document.querySelector("span")
-const pre = document.querySelector("pre")
+const elegido = document.getElementById("Elegido")
+const lista = document.querySelector("pre")
 
-const pacientes = []
-
+const item = []
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault()
 
-    const nome = form.inPaciente.value
-    pacientes.push(nome)
-    let lista = ""
+    const desc = form.inDescricao.value
+    item.push(desc)
+    let Lista = `Esperando\n---------------\n`
 
-
-    for (let i = 0; i < pacientes.length; i++) {
-        lista += `${i + 1}° Paceiente: ${pacientes[i]}\n`
+    for (let i = 0; i < item.length; i++) {
+        Lista += `${i + 1}° Item: ${item[i]}\n`
     }
 
-    pre.textContent = lista
-    form.inPaciente.value = ""
-    form.inPaciente.focus()
+    lista.textContent = Lista
+    form.inDescricao.value = ""
+    form.inDescricao.focus()
 })
 
-form.btnUrg.addEventListener("click", ()=> {
-    if (!form.checkValidity()) {
-        alert("Informe nome do paciente a ser atendido em caráter de Urgência")
-        form.inPaciente.focus()
+form.btPr.addEventListener("click", ()=> {
+    if (!form.inDescricao.value) {
+        alert("Informe um item para Prioridade")
+        form.inDescricao.focus()
         return
     }
 
-    const nome = form.inPaciente.value
-    pacientes.unshift(nome)
-    let lista = ""
+    const desc = form.inDescricao.value
+    item.unshift(desc)
+    let Lista = `Esperando\n---------------\n`
 
-    pacientes.forEach((paciente, i) => (lista += `${i + 1}° Paciente: ${paciente}\n`))
-   
-    pre.textContent = lista
-    form.inPaciente.value = ""
-    form.inPaciente.focus()
+    item.forEach((descricao, i) => (Lista += `${i + 1}° Item: ${descricao}\n`))
+
+    lista.textContent = Lista
+    form.inDescricao.value = ""
+    form.inDescricao.focus()
 })
 
-form.btnAtd.addEventListener("click", () => {
-    if (pacientes.length == 0) {
-        alert("Não há pacientes na lista de espera!")
-        form.inPaciente.focus()
+form.btEleger.addEventListener("click", () => {
+    if (item.length == 0) {
+        alert("Não há Item para eleger!")
+        form.inDescricao.focus()
         return
     }
 
-    const atender = pacientes.shift()
-    let lista = ""
+    const eleger = item.shift()
+    elegido.textContent = eleger
+    
+    let Lista = `Esperando\n---------------\n`
+    item.forEach((descricao, i) => (Lista += `${i + 1}° Item: ${descricao}\n`))
 
-    pacientes.forEach((paciente, i) => (lista += `${i + 1}° Paciente: ${paciente}\n`))
+    lista.textContent = Lista
+    if (item.length == 0) {
+        lista.textContent = ""
+    }
 
-    span.textContent = atender
-    pre.textContent = lista
-
-    form.inPaciente.value = ""
-    form.inPaciente.focus()
 })
