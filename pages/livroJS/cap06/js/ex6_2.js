@@ -25,7 +25,9 @@ frm.addEventListener("submit", (e)=> {
             const numChances = CHANCES - numErros
 
             respErros.textContent = `${numErros} (${erros.join(", ")})`
-            respChances.textContent = numChances
+
+            respChances.textContent = "❤️ ".repeat(Math.max(0, numChances));
+            
             if (numChances == 0) {
                 alert("Suas Chances acabaram...")
                 frm.btSubmit.disabled = true

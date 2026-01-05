@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Prioridade de Gastos</title>
-    <style>
-        * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    </style>
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="contain">
-        <main>
-            <h1>Prioridade de Gastos</h1>
-            <form>
-                <label for="inDescricao">
-                    <p>
-                        Descrição:
-                        <input type="text" name="inDescricao" id="inDescricao" required>
-                        <input type="submit" value="Inserir">
-                        <input type="button" value="Prioridade" id="btPr">
-                        <input type="button" value="Eleger" id="btEleger">
-                    </p>
-                </label>
-            </form>
-            <h3>
-                Elegido:
-                <span id="Elegido"></span>
-            </h3>
-            <pre></pre>
-        </main>
-    </div>
-    <script src="teste.js"></script>
+    <button>Cadastrar</button>
+    <pre></pre>
+    <script>
+        const btn = document.querySelector("button")
+        const h3 = document.querySelector("pre")
+        const carros = []
+        btn.addEventListener("click", () => {
+            const modelo = prompt("Modelo")
+            const preco = Number(prompt("Preço R$"))
+            carros.push(
+                { modelo, preco }
+            )
+            let lista = ""
+            carros.forEach((carro, i) => (lista += `${carro.modelo} - ${carro.preco.toLocaleString("pt-br", { style: "currency", currency: "BRL" })} \n`))
+
+            h3.textContent = lista
+        })
+
+
+    </script>
 </body>
+
 </html>
