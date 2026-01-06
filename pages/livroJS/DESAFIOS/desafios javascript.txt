@@ -1,0 +1,20 @@
+Desafios de JavaScript: Laços de Repetição (Loops) e Vetores
+1. O Contador de Itens: Crie um array de números e use um loop `for` para imprimir cada número no console.
+
+2. Soma de Elementos: Crie um array com 5 números e use um loop para calcular a soma total de todos os elementos.
+
+3. Busca de Nome: Tenha um array de nomes. Use um loop para percorrer o array e, se encontrar o nome "Carlos", exiba "Nome encontrado!", caso contrário, continue procurando.
+
+4. Filtragem de Pares: Dado um array de números de 1 a 10, use um loop e uma estrutura condicional para criar um novo array contendo apenas os números pares.
+
+5. Tabuada no Vetor: Crie um programa que receba um número e use um loop para preencher um array com a tabuada desse número (de 1 a 10).
+
+6. Média de Notas: Crie um array com 4 notas escolares. Use um loop para somá-las e depois calcule a média final.
+
+7. Maior Valor: Dado um array de números desordenados, use um loop para encontrar e exibir qual é o maior número da lista.
+
+8. Inverter Lista: Crie um array e use um loop para criar uma nova lista com os itens na ordem inversa (sem usar o método `.reverse()`).
+
+9. Contador de Caracteres: Tenha um array de strings. Use um loop para percorrer a lista e imprimir quantos caracteres cada palavra possui.
+
+10. Transformador (Uppercase): Dado um array de nomes em letras minúsculas, use um loop para transformar todos os nomes para letras maiúsculas dentro do mesmo array.
