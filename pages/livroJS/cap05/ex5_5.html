@@ -8,6 +8,11 @@
     <style>
         #resp1 {
             overflow: auto;
+            border-bottom: dashed;
+            text-align: left;
+        }
+        #resp2 {
+            height: 20px;
         }
         #resp1::-webkit-scrollbar {
             background-color: rgba(255, 255, 255, 0);
@@ -29,13 +34,13 @@
                     <label for="inDescricao">
                         <p style="float: right;">
                             Descrição da Conta:
-                            <input type="text" name="inDescricao" id="inDescricao" min="3" required autocomplete="off">
+                            <input type="text" name="inDescricao" id="inDescricao" min="3" required autocomplete="off" value="Cabelo">
                         </p>
                     </label>
                     <label for="inValor">
                         <p style="float: right;">
                             Valor R$
-                            <input type="number" name="inValor" id="inValor" min="0" step="0.01" required autocomplete="off">
+                            <input type="number" name="inValor" id="inValor" min="0" step="0.01" required autocomplete="off" value="30">
                         </p>
                     </label>
                     <input type="submit" value="Registrar Conta">
@@ -45,6 +50,6 @@
             </section>
         </section>
     </div>
-    <script src="js/ex5_5.js"></script>
+    <script src="js/ex5_5-teste.js"></script>
 </body>
 </html>
