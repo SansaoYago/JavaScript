@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6_3</title>
+</head>
+<body>
+    <div class="contain">
+        <main>
+            <section class="img"></section>
+            <section>
+                <h1>Revenda Herbie</h1>
+                <form>
+                    <label for="inModelo">
+                        <p>
+                            Modelo:
+                            <input type="text" name="inModelo" id="inModelo" required autocomplete="off" autofocus>
+                        </p>
+                    </label>
+                    <label for="inPreco">
+                        <p>
+                            PreçoR$:
+                            <input type="number" name="inPreco" id="inPreco" required min="0" step="0.01" autocomplete="off">
+                            <input type="submit" value="Adicionar">
+                        </p>
+                        <input type="button" value="Listar Todos" id="btnListar">
+                        <input type="button" value="Filtrar por Preço" id="btnFiltrar">
+                        <input type="button" value="Simular Promoção" id="btnSimular">
+                    </label>
+                </form>
+                <pre></pre>
+            </section>
+        </main>
+    </div>
+    <script src="ex6_3.js"></script>
+</body>
+</html>
