@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="contain">
+        <section class="img">
+            <img src="img/ex6_01.png" alt="">
+        </section>
+        <section class="programa">
+            <h1>Consultório Odontológico</h1>
+            <form style="display: flex; gap: 5px;">
+                <label for="inPaciente">
+                    <p>
+                        Paciente:
+                        <input type="text" name="inPaciente" id="inPaciente" required style="padding-left: 2px;">
+                    </p>
+                </label>
+                <input type="submit" value="Adicionar">
+                <input type="button" value="Urgência" id="inUrgencia">
+                <input type="button" value="Atender" id="inAtender">
+            </form>
+            <div class="out">
+                <h3>Em atendimento: <span class="atendimento"></span></h3>
+                <pre></pre>
+            </div>
+        </section>
+    </div>
+    <script src="js/Ex01.js"></script>
+</body>
+</html>
