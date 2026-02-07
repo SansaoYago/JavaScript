@@ -12,6 +12,7 @@ body {
 }
 
 .contain {
+    padding: 25px;
     display: grid;
     grid-template: 50px 300px 200px / 1fr 2fr;
 }
