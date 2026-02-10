@@ -6,8 +6,8 @@
     <title>Ex02</title>
     
     <style>
-        .exibe {
-            display: block;
+        .oculta {
+            display: none;
         }
     </style>
 </head>
@@ -22,11 +22,11 @@
                 <label for="inNumero">
                     <p>
                         Número:
-                        <input type="number" name="inNumero" id="inNumero">
+                        <input type="number" name="inNumero" id="inNumero" min="1" max="100" required autofocus>
                     </p>
                 </label>
                 <input type="submit" value="Apostar" id="btSubmit">
-                <input style="display: none;" type="button" value="Jogar Novamente" id="btNovo" class="oculta">
+                <input type="button" value="Jogar Novamente" id="btNovo" class="oculta">
             </form>
             <div class="out">
                 <h3>Erros: <span id="outErros">0</span></h3>

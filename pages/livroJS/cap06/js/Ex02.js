@@ -4,7 +4,7 @@ const respChances = document.querySelector("#outChances")
 const respDica = document.querySelector("#outDica")
 
 const erros = []
-const sort = Math.floor(Math.random() * 100) + 1
+const sorteado = Math.floor(Math.random() * 100) + 1
 const CHANCES = 6
 
 form.addEventListener("submit", (e) => {
@@ -12,10 +12,10 @@ form.addEventListener("submit", (e) => {
 
     const numero = Number(form.inNumero.value)
     
-    if (numero == sort) {
-        dica.innerHTML = `Parabéns número sorteado ${sort}`
+    if (numero == sorteado) {
+        respDica.innerHTML = `Parabéns número sorteado ${sorteado}`
         form.btSubmit.disabled = true
-        form.btNovo.classList.add = "exibe"
+        form.btNovo.className = "exibe"
     } else {
         if (erros.includes(numero)) {
             alert(`Você já apostou o número ${numero}. Tente outro...`)
@@ -30,9 +30,9 @@ form.addEventListener("submit", (e) => {
             alert("Suas chances acabaram...")
             form.btSubmit.disabled = true
             form.btNovo.className = "exibe"
-            respDica.textContent = `Game over!! Número sorteado ${sort}`
+            respDica.textContent = `Game over!! Número sorteado ${sorteado}`
         } else {
-            const dica = numero < sort ? "maior" : "menor"
+            const dica = numero < sorteado ? "maior" : "menor"
             respDica.textContent = `Dica: Tente um número ${dica} que ${numero}`
         }
         }
@@ -40,8 +40,9 @@ form.addEventListener("submit", (e) => {
         
     }
 
-
     form.inNumero.value = ""
-    form.inNumero.focus()
-    
+})
+
+form.btNovo.addEventListener("click", ()=> {
+    location.reload()
 })
