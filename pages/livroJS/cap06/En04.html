@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6_4</title>
+    <style>
+        .contain {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <h1>Programa Brinquedoteca</h1>
+        <form>
+            <label for="inNome">
+                Nome da Criança: <input type="text" name="inNome" id="inNome" required autofocus>
+            </label>
+            <label for="inIdade">
+                Idade: <input type="number" name="inIdade" id="inIdade" min="0" required>
+            </label>
+            <input type="submit" value="Adicionar">
+            <div class="button">
+                <input type="button" value="Listar Todos" id="inListar">
+                <input type="button" value="Resumir po Idade" id="inResumir">
+            </div>
+        </form>
+        <pre></pre>
+    </div>
+    <script src="js/ex04.js"></script>
+</body>
+</html>
