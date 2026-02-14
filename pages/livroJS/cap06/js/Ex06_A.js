@@ -45,10 +45,11 @@ form.inTabela.addEventListener("click", () => {
     }
 
     let lista = ""
+    const copia = [...clubes]
 
-    while (clubes.length > 0) {
-        let p = clubes.shift()
-        let u = clubes.pop()
+    while (copia.length > 0) {
+        let p = copia.shift()
+        let u = copia.pop()
         lista += `${p} X ${u}\n`
     }
 
