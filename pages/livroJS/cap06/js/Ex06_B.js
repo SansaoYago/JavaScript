@@ -20,7 +20,7 @@ const filaPref = clientes
 
 const filaNorm = clientes
     .filter(u => u.idade < 60)
-    .map((u, i) => `${i+1+". "}${u.nome}`)
+    .map((u, i) => `${i+1}. ${u.nome}`)
     .join("\n")
 
 console.log(`Fila Presencial\n${"-".repeat(40)}\n${filaPref}\n\n`)
