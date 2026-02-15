@@ -5,37 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex01</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        section.programa h3 {
-            margin-bottom: 15px;
-        }
-
-        pre {
-            border: 1px solid;
-        }
-    </style>
 </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            padding-top: 10%;
+            background-color: darkcyan;
+        }
+        .contain {
+            background-color: rgb(191, 191, 191);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: fit-content;
+            display: grid;
+            grid-template: auto 1fr 2fr / 1fr auto;
+            border: 2px solid rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+            margin: auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.554);
+        }
+        section .img {
+            grid-area: 1 / 1 / -1 / 2;
+        }
+
+        .img img {
+            width: 250px;
+        }
+
+        #programa {
+            background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.196));
+            grid-area: 1 / 2 / -1 / -1;
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #programa h1 {
+            font-size: 1.5em;
+            border-bottom: inset rgba(0, 0, 0, 0.377);
+            padding: 5px 10px;
+        }
+
+        #out {
+            flex-basis: 120px;
+            padding: 5px;
+        }
+
+        input.btn {
+            padding: 2px 4px;
+            border: 1px solid rgba(0, 0, 0, 0.447);
+            border-radius: 4px;
+        }
+        
+    </style>
 <body>
     <div class="contain">
         <section class="img">
             <img src="img/ex6_01.png" alt="">
         </section>
-        <section class="programa">
+        <section id="programa">
             <h1>Consultório Odontológico</h1>
-            <form style="display: flex; gap: 5px;">
+            <form>
                 <label for="inPaciente">
-                    <p>
                         Paciente:
-                        <input type="text" name="inPaciente" id="inPaciente" required style="padding-left: 2px;">
-                    </p>
                 </label>
-                <input type="submit" value="Adicionar">
-                <input type="button" value="Urgência" id="inUrgencia">
-                <input type="button" value="Atender" id="inAtender">
+                <input type="text" name="inPaciente" id="inPaciente" required style="padding-left: 2px;"> 
+                <input type="submit" value="Adicionar" class="btn"><br>
+                <input type="button" value="Urgência" id="inUrgencia" class="btn">
+                <input type="button" value="Atender" id="inAtender" class="btn">
             </form>
-            <div class="out">
+            <div id="out">
                 <h3>Em atendimento: <span class="atendimento"></span></h3>
                 <pre></pre>
             </div>

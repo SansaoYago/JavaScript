@@ -11,8 +11,8 @@ form.addEventListener("submit", (e)=> {
     pacientes.push(nome)
     let lista = ""
 
-    pacientes.forEach(nome => {
-        lista += `${nome}\n`
+    pacientes.forEach((nome, i) => {
+        lista += `${i+1}° ${nome}\n`
     })
 
     out.textContent = lista
@@ -29,9 +29,10 @@ form.inUrgencia.addEventListener("click", ()=> {
     pacientes.unshift(nome)
     let lista = ""
 
-    for (const paciente of pacientes) {
-        lista += `${paciente}\n`
-    }
+    pacientes.forEach((nome, i) => {
+        lista += `${i+1}° ${nome}\n`
+    })
+    
 
     out.textContent = lista
     form.inPaciente.value = ""
@@ -46,8 +47,8 @@ form.inAtender.addEventListener("click", ()=> {
     const atender = pacientes.shift()
     let lista = ""
 
-    pacientes.forEach(nome => {
-        lista += `${nome}\n`
+    pacientes.forEach((nome, i) => {
+        lista += `${i+1}° ${nome}\n`
     })
     
     atendimento.style.color = "Green"
