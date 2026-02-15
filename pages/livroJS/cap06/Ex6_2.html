@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex02</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: darkcyan;
+            font-family: monospace;
+            padding-top: 10%;
+        }
+
+        .contain {
+            background-color: white;
+            display: grid;
+            grid-template: auto 1fr 2fr / 250px 400px;
+            border: 2px solid rgba(0, 0, 0, 0.393);
+            border-radius: 15px;
+            width: fit-content;
+            margin: auto;
+            box-shadow: 10px 5px 15px 0px rgba(0, 0, 0, 0.298);
+        }
+
+        #img {
+            grid-area: 1 / 1 / -1 / 2;
+        }
+
+        #img img {
+            width: 250px;
+        }
+
+        #programa {
+            background-image: linear-gradient(to right, transparent, rgba(179, 170, 237, 0.443));
+            grid-area: 1 / 2 / -1 / -1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 2px 4px;
+            border: 1px solid rgba(0, 0, 0, 0.441);
+            border-radius: 4px;
+        }
+
         .oculta {
             display: none;
         }
@@ -12,10 +58,10 @@
 </head>
 <body>
     <div class="contain">
-        <section class="img">
-
+        <section id="img">
+            <img src="img/control-de-juego.png" alt="">
         </section>
-        <section class="programa">
+        <section id="programa">
             <h1>Jogo Descubra o Número</h1>
             <form style="display: flex; gap: 5px;">
                 <label for="inNumero">
@@ -24,8 +70,8 @@
                         <input type="number" name="inNumero" id="inNumero" min="1" max="100" required autofocus>
                     </p>
                 </label>
-                <input type="submit" value="Apostar" id="btSubmit">
-                <input type="button" value="Jogar Novamente" id="btNovo" class="oculta">
+                <input type="submit" value="Apostar" id="btSubmit" class="btn">
+                <input type="button" value="Jogar Novamente" id="btNovo" class="oculta" class="btn">
             </form>
             <div class="out">
                 <h3>Erros: <span id="outErros">0</span></h3>
