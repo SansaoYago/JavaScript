@@ -1,7 +1,7 @@
 const form = document.querySelector("form")
 const out = document.querySelector("pre")
 
-const clubes = ["Grêmio", "Pelotas", "Juventude", "Internacional", "Brasil", "Ypiranga", "Caxias", "Guarany"]
+const clubes = []
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -48,9 +48,9 @@ form.inTabela.addEventListener("click", () => {
     const copia = [...clubes]
 
     while (copia.length > 0) {
-        let p = copia.shift()
-        let u = copia.pop()
-        lista += `${p} X ${u}\n`
+        let time1 = copia.shift()
+        let time2 = copia.pop()
+        lista += `${time1} X ${time2}\n`
     }
 
     out.textContent = lista
