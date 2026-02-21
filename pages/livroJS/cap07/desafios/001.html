@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <h1>Criar senha</h1>
+    <form>
+        <label for="inSenha">
+            Senha: <input type="number" name="inSenha" id="inSenha">
+        </label>
+        <input type="submit" value="Validar Senha">
+    </form>
+    <h3></h3>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("h3")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const senha = Number(form.inSenha.value)
+            let tam = senha.length
+
+            /* if (senha.length < 8 && senha.length > 16) {
+                alert("A senha deve conter entre 8 a 16 caractere")
+                return
+            } */
+
+            out.textContent = tam
+        })
+    </script>
+</body>
+</html>
