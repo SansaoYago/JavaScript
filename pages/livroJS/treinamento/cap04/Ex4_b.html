@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4_b</title>
+</head>
+<body>
+    <h1>Programa Verifica Velocidade</h1>
+    <form>
+        <label for="inVelocidadePermitida">
+            Velocidade Permitida: <input type="number" name="inVelocidadePermitida" id="inVelocidadePermitida">
+        </label>
+        <br>
+        <label for="inVelocidade">
+            Velocidade do Condutor: <input type="number" name="inVelocidade" id="inVelocidade">
+        </label>
+        <br>
+        <input type="submit" value="Verificar Velocidade">
+    </form>
+    <h3></h3>
+
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("h3")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const veloPerm = Number(form.inVelocidadePermitida.value)
+            const veloCond = Number(form.inVelocidade.value)
+
+            if (veloCond <= veloPerm) {
+                out.textContent = `Sem Multa`
+            } else if (veloCond < (veloPerm * 1.2)) {
+                out.textContent = `Multa Leve`
+            } else {
+                out.textContent = `Multa Grave`
+            }
+        })
+    </script>
+</body>
+</html>
