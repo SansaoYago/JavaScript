@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4_d</title>
+</head>
+
+<body>
+    <h1>Lados de um Triângulo</h1>
+    <form>
+        <label for="inA">
+            Lado A: <input type="number" name="inA" id="inA" min="1">
+        </label> <br>
+        <label for="inB">
+            Lado B: <input type="number" name="inB" id="inB" min="1">
+        </label> <br>
+        <label for="inC">
+            Lado C: <input type="number" name="inC" id="inC" min="1">
+        </label> <br>
+        <input type="submit" value="Verificar">
+    </form>
+    <h3></h3>
+    <h4></h4>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("h3")
+        const forma = document.querySelector("h4")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const A = Number(form.inA.value)
+            const B = Number(form.inB.value)
+            const C = Number(form.inC.value)
+            let tipo = ""
+
+            if (A > (B + C) || C > (A + B) || B > (A + C)) {
+                out.textContent = `Não pode formar um triângulo`
+                forma.textContent = ""
+                return
+            }
+
+            if (A == B && A == C) {
+                tipo = "Equilátero"
+            } else if (A == B && B != C || A == C && A != B || B == C && B != A) {
+                tipo = "Isósceles"
+            } else {tipo = "Escaleno"}
+
+            out.textContent = `Pode formar um triângulo`
+            forma.textContent = `Tipo: ${tipo}`
+
+            form.reset()
+            form.inA.focus()
+        })
+    </script>
+</body>
+
+</html>
