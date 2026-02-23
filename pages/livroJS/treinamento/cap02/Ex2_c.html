@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2_c</title>
+</head>
+<body>
+    <h1>Supermercado JS</h1>
+    <form>
+        <label for="inProduto">
+            Produto: <input type="text" name="inProduto" id="inProduto">
+        </label>
+        <br>
+        <label for="inPreco">
+            Preço R$: <input type="number" name="inPreco" id="inPreco">
+        </label>
+        <br>
+        <input type="submit" value="Ver Promoção">
+    </form>
+    <h3></h3>
+    <h4></h4>
+    <script>
+        const form = document.querySelector("form")
+        const out1 = document.querySelector("h3")
+        const out2 = document.querySelector("h4")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const Produto = form.inProduto.value
+            const Preço = Number(form.inPreco.value)
+
+            const promoção = Preço - (Preço * 0.50)
+            const total = promoção + (Preço * 2)
+
+            out1.textContent = `${Produto} - Promoção: Leve 3 por ${total.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}`
+            out2.textContent = `O 3° produto custa ${promoção.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}`
+
+        })
+    </script>
+</body>
+</html>

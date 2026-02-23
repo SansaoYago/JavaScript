@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2_1</title>
+</head>
+<body>
+    <h1>Farmácia JS</h1>
+    <form>
+        <label for="inMedicamento">
+            Medicamento: <input type="text" name="inMedicamento" id="inMedicamento">
+        </label> <br>
+        <label for="inPreco">
+            Preço R$: <input type="number" name="inPreco" id="inPreco" step="0.01">
+        </label> <br>
+        <input type="submit" value="Mostrar Promoção">
+    </form>
+    <h3></h3>
+    <h4></h4>
+    <script>
+        const form = document.querySelector("form")
+        const out1 = document.querySelector("h3")
+        const out2 = document.querySelector("h4")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const medicamento = form.inMedicamento.value
+            const preço = Number(form.inPreco.value)
+
+            const promoção = Math.floor(preço * 2)
+
+            out1.textContent = `Promoção de ${medicamento}`
+            out2.textContent = `Leve 2 por apenas ${promoção}`
+        })
+    </script>
+</body>
+</html>
