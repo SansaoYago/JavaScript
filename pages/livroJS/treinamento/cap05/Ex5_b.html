@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5_b</title>
+</head>
+<body>
+    <h1>Programa Criação de Chinchilas</h1>
+    <form>
+        <label for="inNum">
+            N° Chinchilas: <input type="number" name="inNum" id="inNum">
+        </label> <br>
+        <label for="inAnos">
+            N° Anos: <input type="number" name="inAnos" id="inAnos">
+        </label> <br>
+        <input type="submit" value="Mostrar Previsão de Chinchilas">
+    </form>
+    <pre></pre>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("pre")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const Chinchilas = Number(form.inNum.value)
+            const anos = Number(form.inAnos.value)
+            let resp = ""
+            let numChin = Chinchilas
+
+            if (Chinchilas % 2 != 0) {
+                alert("O número de chinchilas deve ser par")
+                form.inNum.focus()
+                return
+            }
+
+            for (let i = 1; i <= anos; i++ ) {
+                resp += `${i}° ANO: ${numChin} Chinchilas\n`
+                numChin = numChin * 3
+            }
+
+            out.textContent = resp
+        })
+    </script>
+</body>
+</html>

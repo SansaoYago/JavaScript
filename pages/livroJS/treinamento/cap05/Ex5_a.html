@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5_a</title>
+</head>
+<body>
+    <h1>Programa Repete Fruta</h1>
+    <form>
+        <label for="inFruta">
+            Fruta: <input type="text" name="inFruta" id="inFruta" autofocus>
+        </label> <br>
+        <label for="inNum">
+            Número: <input type="number" name="inNum" id="inNum" min="1">
+        </label> <br>
+        <input type="submit" value="Repetir Fruta">
+    </form>
+    <h3></h3>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("h3")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const etiquetas = []
+
+            const fruta = form.inFruta.value
+            const qtd = Number(form.inNum.value)
+
+            for (let i = 1; i <= qtd; i++) {
+                etiquetas.push(fruta)
+            }
+
+            out.textContent = etiquetas.join(" * ")
+        })
+    </script>
+</body>
+</html>
