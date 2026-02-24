@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5_c</title>
+</head>
+<body>
+    <h1></h1>
+    <h1>Programa Números Perfeitos</h1>
+    <form>
+        <label for="inNum">
+            Número: <input type="number" name="inNum" id="inNum">
+        </label>
+        <br>
+        <input type="submit" value="Verificar se é Perfeito">
+    </form>
+    <h3></h3>
+    <h4></h4>
+    <script>
+        const form = document.querySelector("form")
+        const out1 = document.querySelector("h3")
+        const out2 = document.querySelector("h4")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const num = Number(form.inNum.value)
+            let soma = 0
+            const resp = []
+
+            for (let i = 1; i < num; i++) {
+                if (num % i == 0) {
+                    resp.push(i)
+                    soma += i
+                }
+                
+            }
+
+            out1.textContent = `Divisores do ${num}: ${resp.join(", ")} (Soma: ${soma})`
+
+            if (soma === num) {
+                out2.textContent = `${num} é um número perfeito`
+            } else {
+                out2.textContent = `${num} não é um número perfeito`
+            }
+            form.reset()
+        })
+    </script>
+</body>
+</html>
