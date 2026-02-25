@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6_b</title>
+</head>
+<body>
+    <h1>Programa Número em Ordem</h1>
+    <form>
+        <label for="inNum">
+            Número: <input type="number" name="inNum" id="inNum" min="0" autofocus>
+        </label>
+        <input type="submit" value="Adicionar">
+        <br>
+        <input type="button" value="Verificar Ordem" id="inVerificar">
+    </form>
+    <h3>Números: <span>0</span></h3>
+    <h4></h4>
+    <script>
+        const form = document.querySelector("form")
+        const outNum = document.querySelector("span")
+        const outResp = document.querySelector("h4")
+        const numeros = []
+
+        form.addEventListener("submit", (e)=> {
+            e.preventDefault()
+            const numero = Number(form.inNum.value)
+
+            if (numeros.includes(numero)) {
+                alert(`O número ${numero} já está na lista`)
+                return
+            }
+
+            numeros.push(numero)
+
+            outNum.textContent = numeros.join(", ")
+            form.reset()
+        })
+
+        form.inVerificar.addEventListener("click", () => {
+            if (!numeros.length) {
+                alert("A lista de números está vazia")
+                return
+            }
+            let resp = ""
+            let copia = numeros.join(" - ")
+            const numOrdem = numeros.sort((a, b) => a - b).join(" - ")
+
+            if (copia == numOrdem) {
+                resp = "Atenção... Números estão em ordem crescente"
+            } else {
+                resp = "Atenção... Números não estão em ordem crescente"
+            }
+
+            outResp.textContent = resp
+        })
+    </script>
+</body>
+</html>

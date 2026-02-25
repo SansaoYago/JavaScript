@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6_c</title>
+</head>
+<body>
+    <h1>Programa Concurso</h1>
+    <form>
+        <label for="inNome">
+            Candidato: <input type="text" name="inNome" id="inNome">
+        </label>
+        <label for="inAcertos">
+            N° Acertos: <input type="number" name="inAcertos" id="inAcertos">
+        </label>
+        <input type="submit" value="Adicionar">
+        <br>
+        <input type="button" value="Listar Todos" id="inListar">
+        <input type="button" value="Aprovados 2° Etapa" id="inAprovados">        
+    </form>
+    <pre></pre>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("pre")
+
+        const candidatos = [
+            {nome: "André", acertos: 35},
+            {nome: "Bianca", acertos: 29},
+            {nome: "Carlos", acertos: 27},
+            {nome: "Débora", acertos: 33},
+            {nome: "Eduardo", acertos: 36},
+            {nome: "Fernanda", acertos: 28},
+            {nome: "Giovana", acertos: 31}
+    ]
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const nome = form.inNome.value
+            const acertos = Number(form.inAcertos.value)
+
+            candidatos.push({nome, acertos})
+            form.reset()
+            form.inListar.dispatchEvent(new Event("click"))
+        })
+
+        form.inListar.addEventListener("click", () => {
+            if (!candidatos.length) {
+                alert("A lista está vazia")
+                return
+            }
+            const lista = candidatos
+                .map((candidato) => `${candidato.nome} - ${candidato.acertos} acertos`)
+                .join("\n")
+
+            out.textContent = lista
+        })
+
+        form.inAprovados.addEventListener("click", () => {
+            if (!candidatos.length) {
+                alert("A lista está vazia")
+                return
+            }
+
+            const nAcertos = Number(prompt("Número de acertos para aprovação?"))
+
+            const aprovados = candidatos
+                .filter(candidato => candidato.acertos >= nAcertos)
+                .sort((a, b) => b.acertos - a.acertos)
+                .map(candidato => `${candidato.nome} - ${candidato.acertos} acertos`)
+                .join("\n")
+
+            out.textContent = aprovados
+        })
+    </script>
+</body>
+</html>
