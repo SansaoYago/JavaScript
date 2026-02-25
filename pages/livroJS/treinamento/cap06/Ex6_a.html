@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6_a</title>
+</head>
+<body>
+    <h1>Jogos Eliminatórios</h1>
+    <form>
+        <label for="inClube">
+            Clube: <input type="text" name="inClube" id="inClube" autocomplete="off">
+        </label>
+        <input type="submit" value="Adicionar">
+        <br>
+        <input type="button" value="Listar Clube" id="inListar">
+        <input type="button" value="Montar Tabela" id="inTabela">
+    </form>
+    <pre></pre>
+    <script>
+        const form = document.querySelector("form")
+        const out = document.querySelector("pre")
+        const clubes = []
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const clube = form.inClube.value
+            if (clubes.includes(clube)) {
+                alert("O Clube já está na lista de jogos")
+                return
+            }
+
+            clubes.push(clube)
+            form.reset()
+
+            form.inListar.dispatchEvent(new Event("click"))
+        })
+
+        form.inListar.addEventListener("click", () => {
+            if (!clubes.length) {
+                alert("A lista de clubes está vazia")
+                return
+            }
+
+            const lista = clubes
+                .reduce((lista, clubes, i) => `${lista}${i+1}° ${clubes}\n`, "")
+
+            out.textContent = lista
+        })
+
+        form.inTabela.addEventListener("click", () => {
+            if (!clubes.length) {
+                alert("A lista de clubes está vazia")
+                return
+            }
+            if (clubes.length % 2 != 0) {
+                alert("Para montar um campeonato, a quantidade de clubes cadastrados tem que ser Par")
+                return
+            }
+
+            const copia = [...clubes]
+            const tabela =[]
+
+            while (copia.length > 0) {
+                let primeiro = copia.shift()
+                let ultimo = copia.pop()
+                tabela.push(primeiro+ " X " +ultimo)
+            }
+
+            out.textContent = tabela.join("\n")
+        })
+    </script>
+</body>
+</html>
