@@ -11,8 +11,9 @@
         let numPalavras = 0
         const tam = anuncio.length
 
-        for (let i = 0; i < tam; i++) {
-            if (anuncio.charAt(i) == " ") {
+        
+        for (const letra of anuncio) {
+            if (letra == " ") {
                 numPalavras++
             }
         }

@@ -3,19 +3,19 @@ const resp = document.querySelector("span")
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-
     const fruta = form.inFruta.value.toUpperCase()
-    let resposta = ""
+
+    let palavra = ""
 
     for (const letra of fruta) {
         if (letra == fruta.charAt(0)) {
-            resposta += fruta.charAt(0)
+            palavra += fruta.charAt(0)
         } else {
-            resposta += "_"
+            palavra += "_"
         }
     }
 
-    resp.innerText = resposta
+    resp.innerText = palavra
     form.inFruta.value = "*".repeat(fruta.length)
 
 })
